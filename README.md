@@ -54,7 +54,7 @@ sudo apt install arc-theme
 
 10. **Redshift**: Install via your package manager.
 
-11. **Tmux & Tmux Tlugin Manager**: After the installation of tmux and tmux plugin manager from [Tmux Plugin Manager repository]([https://github.com/wbthomason/packer.nvim](https://github.com/tmux-plugins/tpm)), you can install plugins by entering tmux and pressing Prefix + I.
+11. **Tmux & Tmux Tlugin Manager**: After the installation of tmux and tmux plugin manager from [Tmux Plugin Manager repository](https://github.com/tmux-plugins/tpm), you can install plugins by entering tmux and pressing Prefix + I.
 
 12. **L2TP VPN**: Run the following commands in terminal:
 
