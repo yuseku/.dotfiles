@@ -4,20 +4,20 @@ This repository contains my personal dotfiles for Ubuntu 22.04.2 LTS.
 
 Here's a brief overview of the key components of my setup:
 
-- **i3wm**: I use this tiling window manager, specifically, the latest version that includes the inner gaps feature.
-- **Picom**: This is used for window rounding.
-- **xborder**: This tool adds a border to the active window.
-- **Polybar**: An alternative to the default i3wm status bar.
-- **Alacritty**: My primary terminal emulator.
-- **Ulauncher**: An application launcher, replacing dmenu.
-- **feh**: For setting the wallpaper.
-- **Flameshot**: A powerful and easy to use screenshot tool.
-- **lxappearance & Arc-theme**: A GUI tool for customizing the look of your desktop and the Arc-theme respectively.
-- **redshift**: To adjust the color temperature of your screen according to your surroundings.
-- **tmux & tmux plugin manager**: An essential terminal multiplexer along with a handy plugin manager.
-- **L2TP VPN**: I use this for secure internet access.
-- **sshfs**: For mounting and interacting with remote filesystems over SSH.
-- **Neovim, packer.nvim & plugins-setup**: My text editor of choice along with a plugin manager and a custom plugins setup.
+- **i3wm**: A dynamic tiling window manager with clean, readable, and efficient design.
+- **Picom**: A standalone compositor for Xorg, mainly responsible for window effects such as rounding.
+- **Xborder**: A utility that adds a border to the active window.
+- **Polybar**: A fast and easy-to-use tool for creating status bars.
+- **Alacritty**: A cross-platform, GPU-accelerated terminal emulator.
+- **Ulauncher**: A fast application launcher for Linux.
+- **Feh**: A lightweight and powerful image viewer that is also used for setting the wallpaper.
+- **Flameshot**: A simple yet powerful open-source screenshot software.
+- **lxappearance & Arc-theme**: A GUI tool for customizing the look and feel of your desktop environment, used in conjunction with the Arc-theme.
+- **Redshift**: To adjust the color temperature of your screen according to your surroundings.
+- **Tmux & Tmux Plugin Manager**: A terminal multiplexer, allowing multiple terminal sessions to be created, accessed, and controlled from a single screen.
+- **L2TP VPN**: A VPN client to establish secure connections.
+- **Sshfs**: For mounting and interacting with remote filesystems over SSH.
+- **Neovim & packer.nvim**: My code editor of choice along with a plugin manager.
 - **PHP 8.1**: I use PHP for working with Mason in Neovim.
 
 ## Installation
@@ -54,7 +54,7 @@ sudo apt install arc-theme
 
 10. **Redshift**: Install via your package manager.
 
-11. **Tmux & Tmux Tlugin Manager**: After the installation of tmux and tmux plugin manager from tmux-plugins, you can install plugins by entering tmux and pressing Prefix + I.
+11. **Tmux & Tmux Tlugin Manager**: After the installation of tmux and tmux plugin manager from [Tmux Plugin Manager repository]([https://github.com/wbthomason/packer.nvim](https://github.com/tmux-plugins/tpm)), you can install plugins by entering tmux and pressing Prefix + I.
 
 12. **L2TP VPN**: Run the following commands in terminal:
 
