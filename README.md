@@ -1,5 +1,7 @@
 This repository contains my personal dotfiles for Ubuntu 22.04.2 LTS.
 
+![Preview](preview.png)
+
 ## Overview
 
 Here's a brief overview of the key components of my setup:
