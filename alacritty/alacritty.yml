@@ -1,0 +1,31 @@
+window:
+  opacity: 0.90
+  padding:
+     x: 10
+     y: 10
+
+font:
+  normal:
+    family: JetBrains Mono Nerd Font
+    style:  Bold
+  bold:
+    family: JetBrains Mono Nerd Font
+    style:  Bold
+  italic:
+    family: JetBrains Mono Nerd Font
+    style:  MediumItalic
+  bold_italic:
+    family: JetBrains Mono Nerd Font
+    style: BoldItalic
+  size: 14
+
+cursor:
+  style:
+    shape: Beam
+  thickness: 0.2
+
+env:
+  TERM: xterm-256color
+
+import:
+  - ~/.config/alacritty/catppuccin-mocha.yml
