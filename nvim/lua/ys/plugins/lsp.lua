@@ -3,7 +3,7 @@ if not setup then
   print('lsp-zero not installed!')
   return
 end
- 
+
 lsp.preset('recommended')
 
 lsp.ensure_installed({
@@ -13,8 +13,8 @@ lsp.ensure_installed({
   "intelephense",
   "phpactor",
   "tsserver",
-  "volar",
-  "html"
+  "html",
+  "emmet_ls"
 })
 
 local cmp = require('cmp')
@@ -43,77 +43,15 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
-  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
   vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
   vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 lsp.setup()
-
-local lspconfig = require'lspconfig'
-local lspconfig_configs = require'lspconfig.configs'
-local lspconfig_util = require 'lspconfig.util'
-
-local volar_cmd = {'vue-language-server', '--stdio'}
-local volar_root_dir = lspconfig_util.root_pattern 'package.json'
-
-require'lspconfig'.volar.setup{
-  cmd = volar_cmd,
-  root_dir = volar_root_dir,
-  on_new_config = on_new_config,
-  filetypes = {
-    'vue',
-  },
-  init_options = {
-    typescript = {
-      tsdk = '/home/black-pearl/.nvm/versions/node/v16.13.2/lib/node_modules/typescript/lib'
-      -- Alternative location if installed as root:
-      -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
-    },
-    languageFeatures = {
-      implementation = true, -- new in @volar/vue-language-server v0.33
-      references = true,
-      definition = true,
-      typeDefinition = true,
-      callHierarchy = true,
-      hover = true,
-      rename = true,
-      renameFileRefactoring = true,
-      signatureHelp = true,
-      codeAction = true,
-      workspaceSymbol = true,
-      completion = {
-        defaultTagNameCase = 'both',
-        defaultAttrNameCase = 'kebabCase',
-        getDocumentNameCasesRequest = false,
-        getDocumentSelectionRequest = false,
-      }
-    }
-  }
-}
-
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
--- configure html server
-lspconfig["html"].setup({
-  capabilities = capabilities,
-  cmd = { "vscode-html-language-server", "--stdio" },
-  filetypes = { "html", "phtml" },
-  init_options = {
-    configurationSection = { "html", "css", "javascript" },
-    embeddedLanguages = {
-      css = true,
-      javascript = true
-    },
-    provideFormatter = true
-  },
-})
+require("ys.plugins.lsp.html")
+-- require("ys.plugins.lsp.typescript")
+require("ys.plugins.lsp.emmet")
+-- require("ys.plugins.lsp.magento")

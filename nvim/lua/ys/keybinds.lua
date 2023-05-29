@@ -85,3 +85,10 @@ map("n", "<Leader>up", ":RsyncUpFile<CR>")
 vim.api.nvim_set_keymap("i", "<M-w>", "copilot#Accept('<CR>')", { expr = true, silent = true })
 vim.api.nvim_set_keymap("i", "<M-[>", "<Plug>(copilot-next)", { noremap = false })
 vim.api.nvim_set_keymap("i", "<M-]>", "<Plug>(copilot-previous)", { noremap = false })
+
+-- lsp
+map("n", "<leader>gd", ":lua vim.lsp.buf.definition()<CR>")
+map("n", "<leader>vd", ":lua vim.diagnostic.open_float()<CR>")
+map("n", "<leader>vr", ":lua vim.lsp.buf.references()<CR>")
+map("n", "<leader>va", ":lua vim.lsp.buf.code_action()<CR>")
+map("n", "<leader>vh", ":lua vim.lsp.buf.hover()<CR>")
